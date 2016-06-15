@@ -1,13 +1,20 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+  Artii - I used it to style the list titles
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
+  a) Highlight - allow a list item to be highlighted or not.
   b) Feature 2...
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+  I spent about 4 hours on this project.
 2. What was the most rewarding challenge you conquered?
+  I found implementing my own features to be the most rewarding.
 3. What two additional features did you build? Why?
+  1) Highlight - because this is a feature I would want on a task list.
+  2) 
 4. Where do you still have room to grow?
+  I'm still new to Ruby, and am slow using it to develop. I think I'll get more
+  familiar and faster with practice.

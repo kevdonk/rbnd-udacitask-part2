@@ -45,3 +45,7 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+
+# Test 'highlighted'
+new_list.toggle_highlight(4)
+new_list.all

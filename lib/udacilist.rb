@@ -28,6 +28,9 @@ class UdaciList
       @items.delete_at(index - 1)
     end
   end
+  def toggle_highlight(index)
+    @items[index-1].toggle_highlight
+  end
   def all
     if @title
       title_art = Artii::Base.new :font => 'big'
