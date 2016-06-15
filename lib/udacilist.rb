@@ -30,9 +30,10 @@ class UdaciList
   end
   def all
     if @title
-      puts "-" * @title.length
-      puts @title
-      puts "-" * @title.length
+      title_art = Artii::Base.new :font => 'big'
+      puts "-" * @title.length * 5
+      puts title_art.asciify(@title)
+      puts "-" * @title.length * 5
     end
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
