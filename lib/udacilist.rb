@@ -14,9 +14,9 @@ class UdaciList
       end
     end
     original_length = @items.length
-    @items.push TodoItem.new(description, options) if type == "todo"
-    @items.push EventItem.new(description, options) if type == "event"
-    @items.push LinkItem.new(description, options) if type == "link"
+    @items.push TodoItem.new(type, description, options) if type == "todo"
+    @items.push EventItem.new(type, description, options) if type == "event"
+    @items.push LinkItem.new(type, description, options) if type == "link"
     if (@items.length - original_length) < 1
       raise UdaciListErrors::InvalidItemType, "Type '#{type}' not supported"
     end
@@ -38,5 +38,8 @@ class UdaciList
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
+  end
+  def filter(item_type)
+    @items.select{ |item| item.type == item_type }
   end
 end
