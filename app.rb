@@ -49,3 +49,7 @@ new_list.filter("event")
 # Test 'highlighted'
 new_list.toggle_highlight(4)
 new_list.all
+
+# Test change_priority
+new_list.change_priority(1, "high")
+new_list.all

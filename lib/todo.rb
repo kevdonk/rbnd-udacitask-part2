@@ -1,6 +1,7 @@
 class TodoItem
   include Listable
   attr_reader :type, :description, :due, :priority, :highlighted
+  attr_writer :priority
 
   def initialize(type, description, options={})
     @description = description

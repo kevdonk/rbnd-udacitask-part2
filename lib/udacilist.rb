@@ -45,4 +45,9 @@ class UdaciList
   def filter(item_type)
     @items.select{ |item| item.type == item_type }
   end
+  def change_priority(index, priority)
+    if @items[index-1].type == "todo"
+      @items[index-1].priority = priority
+    end
+  end
 end
