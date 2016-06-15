@@ -2,7 +2,7 @@ class UdaciList
   attr_reader :title, :items
 
   def initialize(options={})
-    @title = options[:title]
+    @title = options[:title] ? options[:title] : "Untitled List"
     @items = []
   end
   def add(type, description, options={})
@@ -14,10 +14,10 @@ class UdaciList
       end
     end
     original_length = @items.length
-    @items.push TodoItem.new(type, description, options) if type == "todo"
-    @items.push EventItem.new(type, description, options) if type == "event"
-    @items.push LinkItem.new(type, description, options) if type == "link"
-    if (@items.length - original_length) < 1
+    allowed_types = { todo: TodoItem, link: LinkItem, event: EventItem }
+    if allowed_types.keys.include? type.to_sym
+      @items.push allowed_types[type.to_sym].new(type, description, options)
+    else
       raise UdaciListErrors::InvalidItemType, "Type '#{type}' not supported"
     end
   end
